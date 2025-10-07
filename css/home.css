@@ -414,7 +414,7 @@ section.variants {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url('../img/button.png');
+  background-image: url('../svg/Check.svg');
   /* ganti dengan path ikon */
   background-size: contain;
   background-repeat: no-repeat;
