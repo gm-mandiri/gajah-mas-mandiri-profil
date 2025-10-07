@@ -414,7 +414,7 @@ section.variants {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url('../svg/check.svg');
+  background-image: url('../img/button.png');
   /* ganti dengan path ikon */
   background-size: contain;
   background-repeat: no-repeat;
@@ -1059,4 +1059,5 @@ footer {
   .social-icons a i {
     font-size: 14px;
   }
+
 }
