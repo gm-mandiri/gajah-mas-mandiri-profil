@@ -1,0 +1,685 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700;900&display=swap');
+
+:root {
+    --a: #AEC9E7;
+    --b: #EDCCF7;
+    --c: #EAE9EF;
+    --d: #E3F2EF;
+    --e: #E3E7F0;
+    --f: #FFFFFF;
+    --g: #2D2D2D;
+    --h: #F5F5F5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--f);
+    color: var(--g);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -60px;
+    padding: 20px 80px 15px 80px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.wrapper {
+    padding: 22px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.005em;
+}
+
+#menu-toggle {
+    display: none;
+    /* sembunyikan hamburger */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+nav a {
+    color: #000000;
+
+}
+
+nav.active {
+    display: flex;
+    gap: 5px;
+    /* misalnya */
+}
+
+nav.active a {
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 6px 14px;
+    transition: background-color 0.3s ease;
+    font-size: 13.5px;
+}
+
+nav.active a:hover {
+    background-color: var(--g);
+}
+
+.btn-signin {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--g);
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    display: block;
+}
+
+.btn-signin:hover {
+    background-color: var(--g);
+    color: #fff;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Main */
+main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+section {
+    margin-bottom: 48px;
+}
+
+/* Section 1: About */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+.about-title-vertical {
+    display: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    /* 20px */
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    color: var(--g);
+    max-width: 96px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    /* 30px */
+    line-height: 1;
+    letter-spacing: -0.0125em;
+    margin-bottom: 24px;
+}
+
+.about-content p {
+    max-width: 100%;
+    /* agar maksimal lebar mengikuti container induk */
+    width: 100%;
+    /* pastikan lebarnya 100% container induk */
+    font-size: 1.01rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    letter-spacing: -0.0125em;
+    color: var(--g);
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* IMAGE SLIDER */
+.image-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.image-slider .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-slider .image-slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    /* tinggi seragam untuk semua foto */
+    overflow: hidden;
+    /* biar bagian yang kelebihan tersembunyi */
+}
+
+.image-slider .image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* crop otomatis biar selalu pas */
+}
+
+/* Tombol prev next sama seperti hero */
+.image-slider .prev,
+.image-slider .next {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.276);
+    border: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.image-slider .prev {
+    left: 30px;
+}
+
+.image-slider .next {
+    right: 30px;
+}
+
+/* Section 3: Vision & Mission */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 25px;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.card {
+    background-color: #f3f4f6;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.card h3 {
+    font-weight: 600;
+    font-size: 2.2rem;
+    /* 20px */
+    margin-bottom: 12px;
+    color: var(--g);
+}
+
+.card p {
+    font-size: 1.01rem;
+    line-height: 1.6;
+    color: var(--g);
+    letter-spacing: -0.0125em;
+    margin: 0;
+}
+
+/* Timeline 2015 Section */
+/* Timeline 2015 Section */
+.timeline-container {
+    max-width: 1120px;
+    margin: 0 auto 0 auto;
+    padding: 48px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+    .timeline-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.timeline-left {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.timeline-left h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3.75rem;
+    /* 60px */
+    line-height: 1;
+    margin: 0 0 1.5rem 0;
+    color: var(--g);
+}
+
+.divider {
+    border-top: 1px solid var(--g);
+    width: 100%;
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-left p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.01rem;
+    line-height: 1.5rem;
+    max-width: 600px;
+    margin: 0;
+    color: var(--g);
+}
+
+.timeline-right {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .timeline-right {
+        justify-content: flex-end;
+    }
+
+    /* .timeline-container {
+        padding-left: 50px;
+        padding-right: 50px;
+      } */
+}
+
+.timeline-right img {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Timeline year selector */
+.year-selector {
+    max-width: 1120px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.01rem;
+}
+
+.year-selector button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    color: var(--g);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.year-selector button.active {
+    color: #d00;
+    font-weight: 700;
+}
+
+.year-selector button.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #d00;
+    border-radius: 2px;
+}
+
+
+
+/* FOOTER */
+footer {
+    background-color: var(--f);
+    padding: 20px 60px;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+    /* Memastikan footer selalu di bawah */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* biar responsif di layar kecil */
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 20px;
+    /* top right bottom left */
+    font-size: 12px;
+    color: #333;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 30px;
+    padding-right: 10px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    padding: 0px 20px 0px 0px;
+    /* top right bottom left */
+    font-size: 12px;
+    color: #333;
+}
+
+.social-icons a {
+    margin-left: 8px;
+    color: var(--g);
+    text-decoration: none;
+}
+
+.social-icons a i {
+    font-size: 20px;
+}
+
+.header .fa-bars {
+    display: none;
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    /* Tambah jarak dari logo */
+    order: -1;
+    /* Letakkan di sisi kiri */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        gap: 3px;
+        background: #111;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 999;
+
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    #menu-toggle {
+        display: block;
+        /* hamburger muncul */
+        cursor: pointer;
+    }
+
+    .btn-signin {
+        display: none;
+        /* tombol sign in bisa disembunyikan */
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    header {
+        margin: 0 auto;
+        padding-left: 40px;
+        padding-right: 40px;
+        max-width: 100%;
+    }
+
+    .wrapper {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    nav {
+        gap: 30px;
+        font-size: 14px;
+    }
+
+
+    footer {
+        padding: 20px 40px;
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-left,
+    .footer-right {
+        justify-content: center;
+        font-size: 12px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-section {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-title-vertical {
+        display: block;
+        white-space: normal;
+    }
+
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+    }
+
+    .wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 999;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    #menu-toggle {
+        display: block;
+        /* hamburger muncul */
+    }
+
+    .btn-signin {
+        display: none;
+        /* tombol sign in bisa disembunyikan */
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    footer {
+        padding: 15px 20px;
+    }
+
+    .footer-left,
+    .footer-right {
+        font-size: 11px;
+    }
+
+    .social-icons a i {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 575px) {
+    header {
+        margin: 0 auto;
+        padding: 15px 15px 15px 15px;
+        max-width: 100%;
+    }
+
+    .wrapper {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .logo {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 0.005em;
+    }
+
+    .btn-signin {
+        display: none;
+        /* tombol sign in bisa disembunyikan */
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .header .fa-bars {
+        display: block;
+        color: var(--g);
+    }
+
+    footer {
+        padding: 10px 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-left,
+    .footer-right {
+        justify-content: center;
+        font-size: 10px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .social-icons a i {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .image-slider .image-slide {
+        height: 400px;
+    }
+
+    .prev,
+    .next {
+        font-size: 1rem;
+        /* kecil sedikit */
+        padding: 5px;
+        top: 38%;
+        /* posisinya tetap enak */
+    }
+}
+
+/* 📱 HP */
+@media (max-width: 600px) {
+    .image-slider .image-slide {
+        height: 250px;
+    }
+
+    .prev,
+    .next {
+        font-size: 1rem;
+        /* lebih kecil */
+        padding: 5px;
+        top: 35%;
+        /* naik sedikit biar tidak nutupin teks */
+    }
+}

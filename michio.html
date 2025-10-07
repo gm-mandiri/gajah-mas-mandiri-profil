@@ -1,0 +1,214 @@
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Mi Chio | CV. Gajah Mas Mandiri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="css/detail.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="wrapper">
+    <div class="logo">
+      GAJAH MAS MANDIRI.
+    </div>
+    <!-- icon hamburger -->
+    <i class="fas fa-bars" id="menu-toggle"></i>
+
+    <!-- navigasi -->
+    <nav id="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="produk.html">Produk</a>
+      <a href="about.html">Tentang Kami</a>
+      <a href="contact.html">Hubungi Kami</a>
+      <!-- <a href="#" class="btn-signin mobile-only">Sign In</a> -->
+    </nav>
+
+    <!-- <button class="btn-signin" type="button">Sign in</button> -->
+  </header>
+
+  <main class="wrapper">
+    <section class="product-section">
+      <div class="product-images">
+        <img src="img/michio1.png" class="main-image" id="mainImage" alt="Sweet cat litter" />
+        <div class="product-thumbs" id="thumbsContainer">
+          <div class="thumb active" data-image="michio1.png"><img src="img/michio1.png" alt="Front view"></div>
+          <div class="thumb" data-image="michio4.png"><img src="img/michio4.png" alt="Side view"></div>
+          <div class="thumb" data-image="michio3.png"><img src="img/michio3.png" alt="Top view"></div>
+        </div>
+      </div>
+    
+      <div class="product-info">
+        <h1>Mi Chio Cat Sand</h1>
+        <hr>
+        <p>Pasir kucing bentonite premium dengan berbagai aroma segar, mudah dibersihkan, dan ramah lingkungan.
+          Pilihan tepat untuk anabul kesayangan.</p>
+    
+        <h2 id="product-price">Rp63.000</h2>
+        <p>Ukuran</p>
+    
+        <div class="sizes">
+          <button class="size-btn active" data-image="michio1.png" data-price="Rp63.000">3.5 L</button>
+          <button class="size-btn" data-image="michio4.png" data-price="Rp75.000">5.5 L</button>
+          <button class="size-btn" data-image="michio3.png" data-price="Rp50.000">25 L</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div>
+        <h3>Keunggulan</h3>
+        <ul>
+          <li><span class="icon"><img src="svg/check.svg" alt="check" /></span>Anti jamur dan bakteri</li>
+          <li><span class="icon"><img src="svg/check.svg" alt="check" /></span>Dibuat dari bentonite pilihan dengan kualitas
+            terbaik</li>
+          <li><span class="icon"><img src="svg/check.svg" alt="check" /></span>Tidak meninggalkan bekas jejak di lantai</li>
+          <li><span class="icon"><img src="svg/check.svg" alt="check" /></span>Residu debu yang dihasilkan lebih sedikit
+          </li>
+          <li><span class="icon"><img src="svg/check.svg" alt="check" /></span>Daya serap tinggi</li>
+          <li><span class="icon"><img src="svg/check.svg" alt="check" /></span>Menyerap bau tak sedap dan menghadirkan aroma
+            segar</li>
+          <li><span class="icon"><img src="svg/check.svg" alt="check" /></span>Dapat terurai dengan mudah (bio degradable)
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img src="img/bentuk.png" width="300" height="300" alt="cat litter" />
+      </div>
+    </section>
+
+    <section class="produk">
+      <h2>Produk Terkait</h2>
+      <div class="produk-container">
+        <!-- Card 1 -->
+        <a href="aromatic.html" class="produk-card">
+            <div class="produk-img">
+            <img src="img/aromatic1.png" alt="Aromatic">
+          </div>
+          <span>New Aromatic</span>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="cloudy.html" class="produk-card">
+            <div class="produk-img">
+              <img src="img/cloudy.png" alt="Cloudy">
+            </div>
+            <span>Cloudy</span>
+          </a>
+
+          <a href="atlantic.html" class="produk-card">
+            <div class="produk-img">
+            <img src="img/atlantic.png" alt="Michio">
+          </div>
+          <span>Atlantic</span>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="img/logo.png" alt="Logo" class="footer-logo">
+        <span>© 2025 CV. Gajah Mas Mandiri. All rights reserved.</span>
+      </div>
+      <div class="footer-right">
+        <span>Connect with us</span>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/cv.gajahmasmandiri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const priceElement = document.getElementById("product-price");
+
+// Toggle menu saat tombol diklik
+menuToggle.addEventListener('click', (event) => {
+  event.stopPropagation(); // mencegah klik ini dianggap "di luar menu"
+  navMenu.classList.toggle('active');
+});
+
+// Tutup menu saat klik di luar navMenu atau menuToggle
+document.addEventListener('click', (event) => {
+  const isClickInsideMenu = navMenu.contains(event.target) || menuToggle.contains(event.target);
+
+  if (!isClickInsideMenu && navMenu.classList.contains('active')) {
+    navMenu.classList.remove('active');
+  }
+});
+
+// Tutup menu saat halaman discroll
+window.addEventListener('scroll', () => {
+  if (navMenu.classList.contains('active')) {
+    navMenu.classList.remove('active');
+  }
+});
+
+
+    const mainImage = document.querySelector(".main-image");
+    const thumbs = document.querySelectorAll(".thumb");
+    const sizeButtons = document.querySelectorAll(".sizes button");
+
+    // Inisialisasi thumbnail aktif
+    thumbs.forEach((thumb, i) => {
+      if (i === 0) thumb.classList.add("active");
+    });
+
+    // Event klik thumbnail
+    thumbs.forEach(thumb => {
+      thumb.addEventListener("click", () => {
+        thumbs.forEach(t => t.classList.remove("active"));
+        thumb.classList.add("active");
+        const img = thumb.querySelector("img");
+        mainImage.src = img.src;
+        mainImage.alt = img.alt;
+      });
+    });
+
+
+    // Event klik ukuran
+    sizeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        sizeButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+
+    // Event klik ukuran (ubah gambar & harga)
+    sizeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        sizeButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const newImage = btn.getAttribute("data-image");
+        const newPrice = btn.getAttribute("data-price");
+
+        // Efek fade saat ubah gambar
+        mainImage.style.opacity = 0;
+        setTimeout(() => {
+          mainImage.src = newImage;
+          mainImage.style.opacity = 1;
+        }, 200);
+
+        // Ubah harga dengan efek halus
+        priceElement.style.opacity = 0;
+        setTimeout(() => {
+          priceElement.textContent = newPrice;
+          priceElement.style.opacity = 1;
+        }, 200);
+      });
+    });
+  </script>
+</body>
+
+</html>

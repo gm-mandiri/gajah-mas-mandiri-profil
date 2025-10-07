@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700;900&display=swap');
+
+:root {
+  --a: #AEC9E7;
+  --b: #EDCCF7;
+  --c: #EAE9EF;
+  --d: #E3F2EF;
+  --e: #E3E7F0;
+  --f: #FFFFFF;
+  --g: #2D2D2D;
+  --h: #F5F5F5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--f);
+  color: var(--g);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -60px;
+  padding: 20px 80px 15px 80px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  padding: 22px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.005em;
+}
+
+#menu-toggle {
+  display: none;
+  /* sembunyikan hamburger */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+nav a {
+  color: #000000;
+
+}
+
+nav.active {
+  display: flex;
+  gap: 5px;
+  /* misalnya */
+}
+
+nav.active a {
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px 14px;
+  transition: background-color 0.3s ease;
+  font-size: 13.5px;
+}
+
+nav.active a:hover {
+  background-color: var(--g);
+}
+
+.btn-signin {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--g);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  display: block;
+}
+
+.btn-signin:hover {
+  background-color: var(--g);
+  color: #fff;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/*BANNER */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  /* auto bisa juga, tapi kita hitung manual di JS nanti */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider .hero {
+  flex: 0 0 100vw;
+  /* supaya satu slide = satu layar */
+  box-sizing: border-box;
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 150px;
+
+  /* Background */
+  background-image: url('background.png');
+  /* Ganti dengan path gambar */
+  background-size: cover;
+  /* Menutupi seluruh area */
+  background-position: center;
+  /* Tengah */
+  background-repeat: no-repeat;
+
+  color: white;
+  /* Supaya teks terlihat kalau background gelap */
+  border-bottom: 1px solid #ddd;
+}
+
+
+.hero h1 {
+  font-size: 2.8rem;
+  letter-spacing: -0.2px;
+  color: var(--g);
+  font-weight: 600;
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 0;
+  margin-top: 10px;
+  color: var(--g);
+  letter-spacing: -0.2px;
+  font-size: 1.01rem;
+}
+
+.hero-img {
+  flex: 0 0 auto;
+  /* jangan biarkan gambar mengecil */
+  display: flex;
+  align-items: center;
+  /* biar gambar tetap rata tengah */
+  height: 400px;
+  /* sesuaikan dengan kebutuhan */
+  padding: 30px 90px 30px 0;
+}
+
+.hero-img img {
+  height: 100%;
+  width: auto;
+  /* jaga rasio gambar */
+}
+
+.image-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(180, 180, 180, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+  color: gray;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
+}
+
+
+/* PRODUK */
+.produk {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.produk h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--g);
+  /* gray-900 */
+  margin-bottom: 50px;
+  margin-top: 6px;
+}
+
+.produk-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 90px;
+  /* jarak antar card */
+}
+
+.produk-card {
+  background-color: #f3f4f6;
+  /* gray-100 */
+  border-radius: 24px;
+  padding: 16px;
+  max-width: 280px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.produk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  font-size: 16px;
+  color: #111827;
+}
+
+.produk-header i {
+  font-size: 18px;
+}
+
+.produk-img {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* biar gambar ketengah */
+  height: 290px;
+  /* tinggi seragam */
+  width: 100%;
+  /* atau bisa fixed width juga kalau mau */
+  box-sizing: border-box;
+}
+
+.produk-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+/* FOOTER */
+footer {
+  background-color: var(--f);
+  padding: 20px 60px;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+  /* Memastikan footer selalu di bawah */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* biar responsif di layar kecil */
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 0px 20px;
+  /* top right bottom left */
+  font-size: 12px;
+  color: #333;
+}
+
+.footer-logo {
+  width: 40px;
+  height: 30px;
+  padding-right: 10px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 0px 0px;
+  /* top right bottom left */
+  font-size: 12px;
+  color: #333;
+}
+
+.social-icons a {
+  margin-left: 8px;
+  color: var(--g);
+  text-decoration: none;
+}
+
+.social-icons a i {
+  font-size: 20px;
+}
+
+.header .fa-bars {
+  display: none;
+  font-size: 21px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+  /* Tambah jarak dari logo */
+  order: -1;
+  /* Letakkan di sisi kiri */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+    background: #111;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+    /* hamburger muncul */
+    cursor: pointer;
+  }
+
+  .btn-signin {
+    display: none;
+    /* tombol sign in bisa disembunyikan */
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  header {
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 100%;
+  }
+
+  .wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  nav {
+    gap: 30px;
+    font-size: 14px;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 150px;
+    background-color: white;
+    flex-wrap: wrap;
+    /* agar elemen stack di layar kecil */
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    letter-spacing: -0.2px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    color: var(--g);
+    letter-spacing: -0.2px;
+    text-align: center;
+    font-size: 1.01rem;
+    font-weight: 500;
+  }
+
+  .hero-img {
+    display: flex;
+    justify-content: center;
+    /* pusat horizontal */
+    align-items: center;
+    /* pusat vertical */
+    width: 100%;
+    /* pastikan flex container selebar parent */
+    padding-right: 0px;
+  }
+
+  .hero-img img {
+    width: 250px;
+    /* atur ukuran gambar */
+    transform: none;
+    /* hapus transform kalau tidak perlu */
+    margin: 0;
+    /* hapus padding agar tidak menggeser */
+  }
+
+
+  .cta {
+    font-size: 1.01rem;
+  }
+
+  .produk-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* jarak antar card */
+  }
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+  }
+  .prev {
+    left: 15px;
+  }
+  
+  .next {
+    right: 15px;
+  }
+  
+  footer {
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-left,
+  .footer-right {
+    justify-content: center;
+    font-size: 12px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100%;
+  }
+
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+    /* hamburger muncul */
+  }
+
+  .btn-signin {
+    display: none;
+    /* tombol sign in bisa disembunyikan */
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: white;
+    flex-wrap: wrap;
+    /* agar elemen stack di layar kecil */
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .produk-header {
+    font-size: 1.01rem;
+    ;
+    letter-spacing: -0.2px;
+    color: #111827;
+  }
+}
+
+@media (max-width: 575px) {
+  header {
+    margin: 0 auto;
+    padding: 15px 15px 15px 15px;
+    max-width: 100%;
+  }
+
+  .wrapper {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.005em;
+  }
+
+  .btn-signin {
+    display: none;
+    /* tombol sign in bisa disembunyikan */
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .header .fa-bars {
+    display: block;
+    color: var(--g);
+  }
+
+  .hero {
+    display: flex;
+    gap: 0px; /* beri jarak rapat antar elemen dengan gap kecil */
+    align-items: center;
+    padding: 0px 0px 0px 0px;
+    /* lebih kecil supaya tetap di tengah */
+    background-color: white;
+    flex-wrap: wrap;
+    /* agar elemen stack di layar kecil */
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.2px;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    color: var(--g);
+    letter-spacing: -0.2px;
+    text-align: center;
+    font-size: 1.01rem;
+    font-weight: 500;
+  }
+
+  .hero-img img {
+    width: 80%;      /* lebar 80% dari container */
+    max-width: 200px; /* maksimal lebar */
+    height: auto;     /* jaga proporsi asli */
+    transform: none;
+    margin: 0;
+  }
+  
+  
+
+
+  .cta {
+    font-size: 1.01rem;
+  }
+
+  .cta {
+    font-size: 1.01rem;
+    padding: 8px 16px;
+  }
+
+  .produk-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* jarak antar card */
+  }
+
+  .produk-card {
+    background-color: #f3f4f6;
+    /* gray-100 */
+    border-radius: 24px;
+    padding: 16px;
+    max-width: 280px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .produk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    font-size: 16px;
+    color: #111827;
+  }
+
+  .produk-header i {
+    font-size: 18px;
+  }
+
+  .produk-img {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* biar gambar ketengah */
+    height: 290px;
+    /* tinggi seragam */
+    width: 100%;
+    /* atau bisa fixed width juga kalau mau */
+    box-sizing: border-box;
+  }
+
+  .produk-img img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+}

@@ -1,0 +1,154 @@
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>CV. Gajah Mas Mandiri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="css/home.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="wrapper">
+    <div class="logo">
+      GAJAH MAS MANDIRI.
+    </div>
+    <!-- icon hamburger -->
+    <i class="fas fa-bars" id="menu-toggle"></i>
+
+    <!-- navigasi -->
+    <nav id="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="produk.html">Produk</a>
+      <a href="about.html">Tentang Kami</a>
+      <a href="contact.html">Hubungi Kami</a>
+      <!-- <a href="#" class="btn-signin mobile-only">Sign In</a> -->
+    </nav>
+
+    <!-- <button class="btn-signin" type="button">Sign in</button> -->
+  </header>
+  <main class="wrapper">
+    <section aria-label="Pasir Berkualitas untuk Kucing Kesayangan" class="hero">
+      <div class="hero-text">
+        <h1>
+          Pasir Berkualitas untuk
+          <br>Kucing Kesayangan</br>
+        </h1>
+        <p>Memberikan kenyamanan maksimal bagi kucing Anda dengan pasir yang bersih, wangi, dan aman digunakan.</p>
+        <div class="hero-buttons">
+          <a href="produk.html">
+            <button class="btn-outline" type="button">Lihat Produk</button>
+          </a>
+          <a href="contact.html">
+            <button class="btn-primary" type="button">Hubungi Kami</button>
+          </a>
+          <!-- <button class="btn-primary" type="button">Hubungi Kami</button> -->
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div aria-label="Gambar seekor kucing berwarna oranye dan putih duduk menghadap ke kanan" class="hero-image">
+          <img alt="Seekor kucing berwarna oranye dan putih duduk menghadap ke kanan" src="svg/20366.svg" />
+        </div>
+      </div>
+    </section>
+    <section aria-label="Mengapa Memilih Kami" class="why-choose">
+      <div class="why-choose-header">
+        <h2>Mengapa Memilih Kami?</h2>
+        <p>Kami berkomitmen memberikan produk terbaik untuk kenyamanan kucing dan kemudahan bagi pemiliknya</p>
+      </div>
+      <div class="features">
+        <div aria-label="Kualitas Premium" class="feature">
+          <img src="svg/Shield.svg" alt="Ikon perisai" />
+          <h3>Kualitas Premium</h3>
+          <p>Pasir kucing berkualitas tinggi yang aman untuk kucing kesayangan Anda</p>
+        </div>
+        <div aria-label="Ramah Lingkungan" class="feature">
+          <img src="svg/Heart.svg" alt="Ikon hati" />
+          <h3>Ramah Lingkungan</h3>
+          <p>Terbuat dari bahan alami yang dapat terurai dan ramah lingkungan</p>
+        </div>
+        <div aria-label="Kontrol Bau Optimal" class="feature">
+          <img src="svg/Wind.svg" alt="Ikon angin" />
+          <h3>Kontrol Bau Optimal</h3>
+          <p>Teknologi canggih untuk mengontrol bau tidak sedap secara maksimal</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <h2 class="variants-title">
+    Pilihan Terbaik dengan
+    <br>Berbagai Varian</br>
+  </h2>
+  <section aria-label="Pilihan Terbaik dengan Berbagai Varian" class="variants">
+    <div class="variants-content">
+      <div aria-label="Gambar produk pasir kucing" class="variants-images">
+        <img alt="Kemasan pasir kucing merek Breeze berwarna hijau dan kuning dengan gambar kucing putih"
+          src="svg/20367.svg" />
+      </div>
+      <div class="variants-text">
+        <p>Temukan pasir kucing yang tepat untuk kucing kesayangan Anda. Semua produk kami telah teruji kualitas dan
+          keamanannya.</p>
+        <ul class="variants-list">
+          <li>Anti jamur dan bakteri</li>
+          <li>99% bebas debu</li>
+          <li>Daya serap tinggi</li>
+          <li>Ramah lingkungan</li>
+          <li>Menangkap bau dengan cepat</li>
+        </ul>
+        <a href="produk.html">
+        <button class="btn-variants" type="button">Lebih lanjut</button>
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="img/logo.png" alt="Logo" class="footer-logo">
+        <span>© 2025 CV. Gajah Mas Mandiri. All rights reserved.</span>
+      </div>
+      <div class="footer-right">
+        <span>Connect with us</span>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/cv.gajahmasmandiri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+// Toggle menu saat tombol diklik
+menuToggle.addEventListener('click', (event) => {
+  event.stopPropagation(); // mencegah klik ini dianggap "di luar menu"
+  navMenu.classList.toggle('active');
+});
+
+// Tutup menu saat klik di luar navMenu atau menuToggle
+document.addEventListener('click', (event) => {
+  const isClickInsideMenu = navMenu.contains(event.target) || menuToggle.contains(event.target);
+
+  if (!isClickInsideMenu && navMenu.classList.contains('active')) {
+    navMenu.classList.remove('active');
+  }
+});
+
+// Tutup menu saat halaman discroll
+window.addEventListener('scroll', () => {
+  if (navMenu.classList.contains('active')) {
+    navMenu.classList.remove('active');
+  }
+});
+
+
+
+  </script>
+
+</body>
+
+</html>

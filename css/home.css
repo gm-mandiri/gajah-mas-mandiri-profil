@@ -1,0 +1,1062 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700;900&display=swap');
+
+:root {
+  --a: #AEC9E7;
+  --b: #EDCCF7;
+  --c: #EAE9EF;
+  --d: #E3F2EF;
+  --e: #E3E7F0;
+  --f: #FFFFFF;
+  --g: #2D2D2D;
+  --h: #F5F5F5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--f);
+  color: var(--g);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -60px;
+  padding: 20px 80px 15px 80px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  padding: 22px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.005em;
+}
+
+#menu-toggle {
+  display: none;
+  /* sembunyikan hamburger */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+nav a {
+  color: #000000;
+
+}
+
+nav.active {
+  display: flex;
+  gap: 5px;
+  /* misalnya */
+}
+
+nav.active a {
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px 14px;
+  transition: background-color 0.3s ease;
+  font-size: 13.5px;
+}
+
+nav.active a:hover {
+  background-color: var(--g);
+}
+
+.btn-signin {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--g);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  display: block;
+}
+
+.btn-signin:hover {
+  background-color: var(--g);
+  color: #fff;
+}
+
+.mobile-only {
+  display: none;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.hero-banner {
+  max-width: 150px;
+  height: auto;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 -60px;
+  padding: 100px 60px;
+  position: relative;
+  z-index: 2;
+  margin-top: -100px;
+  gap: 20px;
+
+  min-height: 500px;
+  height: auto;
+  color: white;
+}
+
+/* Tambahkan background blur2 dengan pseudo-element */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0 */
+  background-image: url('../svg/blur2.svg');
+  background-size: 90% auto;
+  background-position: center 1%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  /* berada di belakang konten hero */
+}
+
+.hero-text {
+  flex: 4;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-weight: 600;
+  font-size: 51px;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  color: var(--g);
+}
+
+.hero-text h1 span {
+  font-weight: 400;
+  color: #555;
+}
+
+.hero-text p {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.2;
+  margin: 30px 0 70px 0;
+  color: var(--g);
+  letter-spacing: -0.2px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  font-size: 1.01rem;
+  font-weight: 400;
+  padding: 8px 24px;
+  border-radius: 15px;
+  border: 1px solid var(--g);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  color: var(--g);
+}
+
+.btn-outline:hover {
+  background-color: var(--g);
+  color: #fff;
+}
+
+.btn-primary {
+  font-size: 1.01rem;
+  font-weight: 400;
+  padding: 8px 24px;
+  border-radius: 15px;
+  border: none;
+  background: #E3E7F0;
+  color: var(--g);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: var(--g);
+  color: #fff;
+}
+
+.hero-image-wrapper {
+  flex: 3;
+  /* sebelumnya 1, agar area gambar lebih luas */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.hero-image {
+  flex-shrink: 0;
+  max-width: 900px;
+  /* sebelumnya 400px, diperbesar */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  /* menjaga proporsi */
+}
+
+
+section.why-choose {
+  margin-top: 40px;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.why-choose-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.why-choose-header h2 {
+  font-weight: 600;
+  font-size: 45px;
+  margin: 0;
+  color: var(--g);
+  position: relative;
+}
+
+.why-choose-header p {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--g);
+  max-width: 400px;
+  margin-left: 50px;
+  letter-spacing: -0.2px;
+}
+
+.why-choose-header>p {
+  align-self: center;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.feature {
+  flex: 1 1 30%;
+  min-width: 220px;
+  color: var(--g);
+}
+
+.feature img {
+  width: 43px;
+  height: 43px;
+  padding-bottom: 15px;
+  height: auto;
+}
+
+.feature svg {
+  width: 32px;
+  height: 32px;
+  stroke: #999;
+  stroke-width: 1.5;
+  fill: none;
+  margin-bottom: 12px;
+}
+
+.feature h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  color: var(--g);
+  letter-spacing: -0.2px;
+}
+
+.feature p {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--g);
+  letter-spacing: -0.2px;
+}
+
+.variants-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 50px;
+  margin: 20px 0 50px 0;
+  background: linear-gradient(to top, #666666, #2D2D2D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.2px;
+  line-height: 1.3;
+}
+
+section.variants {
+  background: #e6ebf4;
+  padding: 60px 0 80px 0;
+  width: 100%;
+}
+
+.variants-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.variants-images {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.variants-images img {
+  max-height: 350px;
+  width: auto;
+  object-fit: contain;
+}
+
+.variants-text {
+  flex: 1 1 40%;
+  font-size: 17px;
+  letter-spacing: -0.2px;
+}
+
+.variants-text p {
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.variants-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.variants-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.variants-list li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../svg/check.svg');
+  /* ganti dengan path ikon */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.btn-variants {
+  font-size: 1.01rem;
+  font-weight: 400;
+  padding: 4px 24px;
+  border-radius: 20px;
+  border: 1px solid var(--g);
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-variants:hover {
+  background-color: var(--g);
+  color: #fff;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--f);
+  padding: 20px 60px;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+  /* Memastikan footer selalu di bawah */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* biar responsif di layar kecil */
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 0px 20px;
+  /* top right bottom left */
+  font-size: 12px;
+  color: #333;
+}
+
+.footer-logo {
+  width: 40px;
+  height: 30px;
+  padding-right: 10px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 0px 0px;
+  /* top right bottom left */
+  font-size: 12px;
+  color: #333;
+}
+
+.social-icons a {
+  margin-left: 8px;
+  color: var(--g);
+  text-decoration: none;
+}
+
+.social-icons a i {
+  font-size: 20px;
+}
+
+.header .fa-bars {
+  display: none;
+  font-size: 21px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+  /* Tambah jarak dari logo */
+  order: -1;
+  /* Letakkan di sisi kiri */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+    background: #111;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+    /* hamburger muncul */
+    cursor: pointer;
+  }
+
+  .btn-signin {
+    display: none;
+    /* tombol sign in bisa disembunyikan */
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .hero::after {
+    background-image: none;
+    /* Menghilangkan blur2.svg */
+  }
+
+  header {
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 100%;
+  }
+
+  .wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  nav {
+    gap: 30px;
+    font-size: 1.01rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 40px;
+    z-index: auto; 
+    }
+
+  .hero-image-wrapper {
+    justify-content: center;
+    padding-left: 0;
+    height: 100vh;
+    /* tinggi 80% dari viewport */
+    max-height: none;
+    /* menghilangkan batas maksimal */
+  }
+
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    background-image: url('../svg/blur3.svg');
+    /* background blur SVG */
+    background-size: cover;
+    /* sesuaikan ukuran */
+    background-position: center;
+    /* posisi tengah */
+    background-repeat: no-repeat;
+  }
+
+  /* Jika ingin memberi efek blur tambahan pada background */
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    z-index: 0;
+  }
+
+  /* Atur gambar kucing di atas overlay background */
+  .hero-image img {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    justify-content: center;
+    padding-left: 0;
+
+  }
+
+  .hero-image {
+    max-width: 300px;
+    padding-left: 0;
+  }
+
+  section.variants {
+    background: #e6ebf4;
+    padding: 30px 0 30px 0;
+    width: 100%;
+  }
+
+  .variants-list li {
+    padding-left: 250px;
+  }
+
+  .variants-content {
+    padding: 0 20px;
+    gap: 30px;
+  }
+
+  .variants-images {
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  .variants-text {
+    flex: 1 1 100%;
+    order: 2;
+    text-align: center;
+  }
+
+  section.why-choose {
+    padding-top: 40px;
+    padding-bottom: 3px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  footer {
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-left,
+  .footer-right {
+    justify-content: center;
+    font-size: 12px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100%;
+  }
+
+  .hero {
+    padding: 30px 15px 30px 15px;
+    min-height: 250px;
+  }
+
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+    /* hamburger muncul */
+  }
+
+  .btn-signin {
+    display: none;
+    /* tombol sign in bisa disembunyikan */
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .hero-image-wrapper {
+    justify-content: center;
+    padding-left: 0;
+    height: 100vh;
+    /* tinggi 80% dari viewport */
+    max-height: none;
+    /* menghilangkan batas maksimal */
+  }
+
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    background-image: url('../svg/blur3.svg');
+    /* background blur SVG */
+    background-size: cover;
+    /* sesuaikan ukuran */
+    background-position: center;
+    /* posisi tengah */
+    background-repeat: no-repeat;
+  }
+
+  /* Jika ingin memberi efek blur tambahan pada background */
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    z-index: 0;
+  }
+
+  /* Atur gambar kucing di atas overlay background */
+  .hero-image img {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero-text p {
+    font-size: 1.01rem;
+    margin-bottom: 30px;
+  }
+
+  .btn-outline,
+  .btn-primary {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  .hero-image {
+    max-width: 250px;
+  }
+
+  .variants-title {
+    font-size: 36px;
+    margin: 20px 0 40px 0;
+  }
+
+
+  .variants-text {
+    font-size: 1.01rem;
+  }
+
+  .variants-list li {
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 25px;
+  }
+
+  .btn-variants {
+    padding: 6px 20px;
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 575px) {
+  header {
+    margin: 0 auto;
+    padding: 15px 15px 15px 15px;
+    max-width: 100%;
+  }
+
+  .wrapper {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.005em;
+  }
+
+  .btn-signin {
+    display: none;
+    /* tombol sign in bisa disembunyikan */
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .header .fa-bars {
+    display: block;
+    color: var(--g);
+  }
+
+  main {
+    padding: 0 15px 30px;
+    margin: 0 auto;
+  }
+
+  .hero {
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 10px 15px;
+    padding-bottom: 30px;
+    gap: 25px;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .hero-text p {
+    font-size: 1.01rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .btn-outline,
+  .btn-primary {
+    font-size: 13px;
+    padding: 7px 20px;
+  }
+
+  .hero-image-wrapper {
+    justify-content: center;
+    padding-left: 0;
+    height: 100vh;
+    /* tinggi 80% dari viewport */
+    max-height: none;
+    /* menghilangkan batas maksimal */
+  }
+
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    background-image: url('../svg/blur3.svg');
+    /* background blur SVG */
+    background-size: cover;
+    /* sesuaikan ukuran */
+    background-position: center;
+    /* posisi tengah */
+    background-repeat: no-repeat;
+  }
+
+  /* Jika ingin memberi efek blur tambahan pada background */
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    z-index: 0;
+  }
+
+  /* Atur gambar kucing di atas overlay background */
+  .hero-image img {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-image {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+  }
+
+  section.why-choose {
+    padding-top: 26px;
+    padding-bottom: 10px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .why-choose-header {
+    flex-direction: column;
+    margin-bottom: 50px;
+    text-align: left;
+  }
+
+  .why-choose-header h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .why-choose-header p {
+    margin-left: -18px;
+    max-width: 100%;
+    font-size: 1.01rem;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 30px;
+    text-align: left;
+  }
+
+  .feature {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .feature h3 {
+    font-size: 18px;
+  }
+
+  .feature p {
+    font-size: 1.01rem;
+  }
+
+  .variants-title {
+    font-size: 34px;
+    margin: 15px 0 40px 0;
+    padding-right: 8px;
+    padding-left: 8px;
+    text-align: center;
+  }
+
+  section.variants {
+    padding: 40px 15px 40px 15px;
+  }
+
+  .variants-content {
+    flex-direction: column;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  .variants-images,
+  .variants-text {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .variants-images {
+    margin-bottom: 30px;
+  }
+
+  .variants-images img {
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .variants-text {
+    font-size: 1.01rem;
+    text-align: center;
+  }
+
+  .variants-content {
+    flex-direction: column;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  footer {
+    padding: 10px 15px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-left,
+  .footer-right {
+    justify-content: center;
+    font-size: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .social-icons a i {
+    font-size: 14px;
+  }
+}
