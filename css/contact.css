@@ -331,13 +331,13 @@ footer {
     }
 
     .contact-info h2 {
-        padding-left: 30px;
+        padding-left: 20px;
         font-size: 28px;
     }
 
     .info-item {
         justify-content: left;
-        padding-left: 30px;
+        padding-left: 20px;
     }
 
     .info-item .icon {
@@ -474,4 +474,5 @@ footer {
     .social-icons a i {
         font-size: 14px;
     }
+
 }
